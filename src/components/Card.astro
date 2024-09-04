@@ -1,6 +1,6 @@
 ---
 //src/components/Card.astro
-const { name, position, aboutMe, linkedin, github, cvLink, profileImage } =
+const { name, position, aboutMe, linkedin, github, cvLink, strikeLink, profileImage } =
     Astro.props;
 
 import { Image } from "astro:assets";
@@ -25,6 +25,10 @@ import "../styles/card.css";
                 <a href={cvLink} class="hover-text" target="_blank">
                     <span class="tooltip-text" id="fade"> Resume </span>
                     <i class="bi bi-file-earmark-arrow-down"></i>
+                </a>
+                <a href={strikeLink} class="hover-text" target="_blank">
+                    <span class="tooltip-text" id="fade"> Strike </span>
+                    <i class="bi bi-type-strikethrough"></i>
                 </a>
             </div>
         </div>
