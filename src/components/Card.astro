@@ -1,8 +1,10 @@
 ---
 //src/components/Card.astro
-const {name, position, aboutMe, linkedin, github, cvLink, profileImage } = Astro.props;
+const { name, position, aboutMe, linkedin, github, cvLink, profileImage } =
+    Astro.props;
 
-import '../styles/card.css';
+import { Image } from "astro:assets";
+import "../styles/card.css";
 ---
 
 <div class="container">
@@ -13,27 +15,27 @@ import '../styles/card.css';
             <p>{aboutMe}</p>
             <div class="icons">
                 <a href={linkedin} class="hover-text" target="_blank">
-                    <span class="tooltip-text" id="fade">
-                        LinkedIn
-                    </span>
+                    <span class="tooltip-text" id="fade"> LinkedIn </span>
                     <i class="bi bi-linkedin"></i>
                 </a>
                 <a href={github} class="hover-text" target="_blank">
-                    <span class="tooltip-text" id="fade">
-                        GitHub
-                    </span>
+                    <span class="tooltip-text" id="fade"> GitHub </span>
                     <i class="bi bi-github"></i>
                 </a>
                 <a href={cvLink} class="hover-text" target="_blank">
-                    <span class="tooltip-text" id="fade">
-                        Resume
-                    </span>
+                    <span class="tooltip-text" id="fade"> Resume </span>
                     <i class="bi bi-file-earmark-arrow-down"></i>
                 </a>
             </div>
         </div>
         <div class="image">
-            <img src={profileImage} alt="">
+            <Image
+                loading="eager"
+                src={profileImage}
+                alt=""
+                width="1"
+                height="1"
+            />
         </div>
     </div>
 </div>
