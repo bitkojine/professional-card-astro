@@ -1,45 +1,61 @@
 ---
 //src/components/Card.astro
-const { name, position, aboutMe, linkedin, github, cvLink, strikeLink, profileImage } =
-    Astro.props;
+const {
+    name,
+    position,
+    aboutMe,
+    linkedin,
+    github,
+    cvLink,
+    strikeLink,
+    nostrLink,
+    nostrShortenedNpub,
+    profileImage,
+} = Astro.props;
 
 import { Image } from "astro:assets";
 import "../styles/card.css";
 ---
 
 <div class="container">
-    <div class="card-container">
-        <div class="descripcion">
-            <h1>{name}</h1>
-            <h2>{position}</h2>
-            <p>{aboutMe}</p>
-            <div class="icons">
-                <a href={linkedin} class="hover-text" target="_blank">
-                    <span class="tooltip-text" id="fade"> LinkedIn </span>
-                    <i class="bi bi-linkedin"></i>
-                </a>
-                <a href={github} class="hover-text" target="_blank">
-                    <span class="tooltip-text" id="fade"> GitHub </span>
-                    <i class="bi bi-github"></i>
-                </a>
-                <a href={cvLink} class="hover-text" target="_blank">
-                    <span class="tooltip-text" id="fade"> Resume </span>
-                    <i class="bi bi-file-earmark-arrow-down"></i>
-                </a>
-                <a href={strikeLink} class="hover-text" target="_blank">
-                    <span class="tooltip-text" id="fade"> Strike </span>
-                    <i class="bi bi-type-strikethrough"></i>
-                </a>
+    <div class="pub-key-container">
+        <div class="card-container">
+            <div class="description">
+                <h1>{name}</h1>
+                <h2>{position}</h2>
+                <p>{aboutMe}</p>
+                <div class="icons">
+                    <a href={linkedin} class="hover-text" target="_blank">
+                        <span class="tooltip-text" id="fade"> LinkedIn </span>
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                    <a href={github} class="hover-text" target="_blank">
+                        <span class="tooltip-text" id="fade"> GitHub </span>
+                        <i class="bi bi-github"></i>
+                    </a>
+                    <a href={cvLink} class="hover-text" target="_blank">
+                        <span class="tooltip-text" id="fade"> Resume </span>
+                        <i class="bi bi-file-earmark-arrow-down"></i>
+                    </a>
+                    <a href={strikeLink} class="hover-text" target="_blank">
+                        <span class="tooltip-text" id="fade"> Strike </span>
+                        <i class="bi bi-type-strikethrough"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="image">
+                <Image
+                    loading="eager"
+                    src={profileImage}
+                    alt=""
+                    width="1"
+                    height="1"
+                />
             </div>
         </div>
-        <div class="image">
-            <Image
-                loading="eager"
-                src={profileImage}
-                alt=""
-                width="1"
-                height="1"
-            />
-        </div>
+        <a href={nostrLink} class="hover-text nostr" target="_blank">
+            <span class="tooltip-text" id="fade"> Nostr </span>
+            {nostrShortenedNpub}
+        </a>
     </div>
 </div>

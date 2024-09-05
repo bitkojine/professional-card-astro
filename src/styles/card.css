@@ -15,6 +15,25 @@
     object-position: center;
 }
 
+.pub-keys{
+    align-self: center;
+    overflow-wrap: break-word;
+    max-width: 100vw;
+    color: #ffffff;
+    font-size: large;
+}
+
+.pub-key-container{
+    display: flex;
+    flex-direction: column;
+    word-wrap: break-word;
+    max-width: 800px;
+    height: auto;
+    background: linear-gradient(to right,#1e4861, #3aa1dd); /* #2FEBD4, #DEFFFD*/
+    border-radius: 12px;
+    box-shadow: 1px 7px 10px 2px rgba(0, 0, 0, .15);
+}
+
 /* CONTAINER */
 .container{
     display: flex;
@@ -29,46 +48,48 @@
 /* CARD */
 .card-container{
     display: flex;
-    width: min-content;
+    max-width: 100vw;
     height: auto;
-    background: linear-gradient(to right,#1e4861, #3aa1dd); /* #2FEBD4, #DEFFFD*/
     border-radius: 12px;
-    box-shadow: 1px 7px 10px 2px rgba(0, 0, 0, .15);
 }
 
-.descripcion{
+.description{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-.image, .descripcion{
+.image, .description{
     padding: 30px;
     text-align: left;
     color: #FFFFFF;
 }
 
-.descripcion h2{
+.description h2{
     line-height: 2;
     font-weight: 500;
-    font-size: medium;
+    font-size: 1.15rem;
 }
 
-.descripcion p{
+.description p{
+    margin-top: 0.5rem;
     font-weight: 300;
-    font-size: 17px;
+    font-size: 20px;
 }
 
-.descripcion h1{
+.description h1{
     font-weight: 400;
 }
 
 /* ICONS */
-.descripcion .icons{
+.description .icons{
     margin-top: 30px;
 }
-.descripcion .icons a{
+.nostr {
+    padding-bottom: 1rem;
+}
+.nostr, .description .icons a{
     display: inline-block;
     margin: 0 30px 0 30px;
     color: #FFFFFF;
@@ -87,11 +108,18 @@ a:hover{
     z-index: 2;
     width: 100px;
     color: white;
-    font-size: 12px;
+    font-size: 15px;
     background-color: #192733;
     border-radius: 10px;
     padding: 5px 10px 5px 10px;
 }
+
+.nostr .tooltip-text {
+    top: -0.6rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 #fade {
     opacity: 0;
     transition: opacity 0.3s;
@@ -107,16 +135,21 @@ a:hover{
 }
 
 /* RESPONSIVE */
-@media (max-width: 576px){
+@media (max-width: 750px){
     .container{
         height: 100vh;
+        padding: 0 15px;
+    }
+    .pub-key-container{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
         padding: 0 15px;
     }
     .card-container{
         display: flex;
         flex-direction: column-reverse;
-        background: linear-gradient(#12a89c, #024945);
-        width: 750px;
+        width: 100%;
         margin-top: 12px;
         margin-bottom: 12px;
     }
@@ -127,23 +160,14 @@ a:hover{
     .image{
         padding: 15px 0 0 0;
     }
-    .descripcion{
-        padding: 10px 20px 18px 20px;
+    .description{
+        padding: 10px 20px 10px 20px;
     }
-    .descripcion h1{
+    .description h1{
         font-weight: 400;
         font-size: 25px;
     }
-    .descripcion h2{
-        line-height: 2;
-        font-weight: 500;
-        font-size: 17px;
-    }
-    .descripcion p{
-        font-weight: 300;
-        font-size: 15px;
-    }
-    .descripcion .icons{
+    .description .icons{
         margin-top: 18px;
     }
 }
