@@ -1,5 +1,3 @@
-test commit
-
 # Personal Professional Card Astro
 
 "Hi there!, I'm Brian. I hope this small template helps you gain visibility while you build great projects. Thank you for using it. I wish you success in everything you set out to do; you will surely achieve great things.
